@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>TODO LIST</header>
+    <nav class="navBar">
+        <button class="addTaskBtn">Add Task</button>
+        <select name="select" id="select" class="">
+            <option value="">All</option>
+            <option value="">Completed</option>
+            <option value="">Not fulfilled</option>
+        </select>
+    </nav>
+    <main class="main">
+        <section class="taskList">
+            <div class="taskСontent">
+                <input type = 'checkbox' class="checktask">
+                <h2 class="h2">what needs to be done?</h3>
+                <span class="span">time,date</span>
+                <button class="del">
+                    <img src="./pictures/trash.png" alt="">
+                </button>
+                <button class="edit">
+                    <img src="./pictures/pencil.png" alt="">
+                </button>
+            </div>
+            <div class="taskСontent">
+                <input type = 'checkbox' class="checktask">
+                <h2 class="h2">what needs to be done?</h3>
+                <span class="span">time,date</span>
+                <button class="del">
+                    <img src="./pictures/trash.png" alt="">
+                </button>
+                <button class="edit">
+                    <img src="./pictures/pencil.png" alt="">
+                </button>
+            </div>
+            <div class="taskСontent">
+                <input type = 'checkbox' class="checktask">
+                <h2 class="h2">what needs to be done?</h3>
+                <span class="span">time,date</span>
+                <button class="del">
+                    <img src="./pictures/trash.png" alt="">
+                </button>
+                <button class="edit">
+                    <img src="./pictures/pencil.png" alt="">
+                </button>
+            </div>
+        </section>
+    </main>
     <script src="script.js"> </script>
 </body>
 </html>

@@ -1,0 +1,63 @@
+body{
+    margin-left: 450px;
+    margin-top: 250px;
+}
+
+header{
+    margin-left: 350px;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(112, 112, 112);
+}
+
+.taskList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.taskСontent{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 200px;
+}
+
+select{
+    margin-left: 830px;
+    background-color: rgb(114, 114, 114);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.addTaskBtn{
+    background-color: rgb(49, 49, 255);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.main{
+    background-color: rgb(122, 122, 122);
+    width: 1000px;
+    height: 100%;
+    margin-top: 10px;
+
+}
+
+.main input{
+width: 10px;
+height: 10px;
+}
+
+
+
+.del img{
+    width: 20px;
+    height: 20px;
+}
+.edit img{
+width: 20px;
+height: 20px;
+}
