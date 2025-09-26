@@ -96,3 +96,7 @@ select{
     margin-top: 10px;
     border-radius: 4px;
 }
+
+.modal{
+    margin-left: 25%;
+}

@@ -29,30 +29,14 @@
                     <img src="./pictures/pencil.png" alt="">
                 </button>
             </div>
-            <div class="taskСontent">
-                <input type = 'checkbox' class="checktask">
-                <h2 class="h2">what needs to be done?</h3>
-                <p class="timeData">time,date</p>
-                <button class="del">
-                    <img src="./pictures/trash.png" alt="">
-                </button>
-                <button class="edit">
-                    <img src="./pictures/pencil.png" alt="">
-                </button>
-            </div>
-            <div class="taskСontent">
-                <input type = 'checkbox' class="checktask">
-                <h2 class="h2">what needs to be done?</h3>
-                <p class="timeData">time,date</p>
-                <button class="del">
-                    <img src="./pictures/trash.png" alt="">
-                </button>
-                <button class="edit">
-                    <img src="./pictures/pencil.png" alt="">
-                </button>
-            </div>
         </section>
     </main>
+    <div class="modalBackground"></div>
+    <article class="modal">
+        <h1>New task</h1>
+        <input type="text" name="" class="textTask" id="newTaskText">
+        <button class="addTaskButton" onclick="createTask()">Add</button>
+    </article>
     <script src="script.js"> </script>
 </body>
 </html>
