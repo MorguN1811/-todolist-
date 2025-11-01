@@ -11,32 +11,23 @@
     <nav class="navBar">
         <button class="addTaskBtn">Add Task</button>
         <select name="select" id="select" class="">
-            <option value="All">All</option>
-            <option value="All">Completed</option>
-            <option value="All">Not fulfilled</option>
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="not-fulfilled">Not fulfilled</option>
         </select>
     </nav>
     <main class="main">
         <section class="taskList">
-            <div class="taskСontent">
-                <input type = 'checkbox' class="checktask">
-                <h2 class="h2">what needs to be done?</h2>
-                <p class="timeData">time,date</p>
-                <button class="del">
-                    <img src="./pictures/trash.png" alt="">
-                </button>
-                <button class="edit">
-                    <img src="./pictures/pencil.png" alt="">
-                </button>
-            </div>
+           
         </section>
     </main>
-        <div class="modalBackground"></div>
-            <article class="modal">
-                <h1>New task</h1>
-                <input type="text" name="" class="textTask" id="newTaskText">
-                <button class="addTaskButton" onclick="createTask()">Add</button>
-            </article>
+    <div class="modalBackground"></div>
+    <article class="modal">
+        <h1>New task</h1>
+        <input type="text" class="newTaskText" placeholder="Enter task">
+        <button class="addTaskButton" onclick="createTask()">Add</button>
+    </article>
+
     <script src="script.js"> </script>
 </body>
 </html>
