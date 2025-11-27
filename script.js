@@ -1,8 +1,8 @@
 let storageTask = localStorage.getItem('storageTask');
-if (!storageTask) {
+if (!storageTask)  {
     storageTask = {}; 
 } else {
-    storageTask = JSON.parse(storageTask);
+    storageTask = JSON.parse(storageTask);  
 }
 
 function createTask(){
@@ -29,31 +29,6 @@ function createTask(){
     updateTaskList();
 }
 
-function updateTaskList(){
-    console.log('123')
-    
-    document.querySelector('.taskList').innerHTML = '';
-    
-    let tasks = Object.values(storageTask);
-
-    tasks.forEach(task => {
-    
-        let newTaskContainer = `<div class="taskСontent" class='${task.state}' id='taslId${task.id}'>
-                                    <input type = 'checkbox' class="checktask">
-                                    <h2 class="h2">${task.text}</h3>
-                                    <p class="timeData">${task.time}</p>
-                                    <button class="del">
-                                        <img src="./pictures/trash.png" alt="">
-                                    </button>
-                                    <button class="edit">
-                                        <img src="./pictures/pencil.png" alt="">
-                                    </button>
-                                </div>`
-
-        document.querySelector('.taskList').innerHTML += newTaskContainer;
-    })
-}
-
 document.querySelector('.addTaskBtn').addEventListener('click', () => {
     document.querySelector('.modalBackground').style.display = 'block';
     document.querySelector('.modal').style.display = 'block';
@@ -73,5 +48,30 @@ document.querySelector('.taskList').addEventListener('change', (event) => {
         updateTaskList();
     }
 });
+
+function updateTaskList(){
+    console.log('123')
+    
+    document.querySelector('.taskList').innerHTML = '';
+    
+    let tasks = Object.values(storageTask);
+
+    tasks.forEach(task => {
+    
+        let newTaskContainer = `<div  class="taskСontent ${task.state}" id='taskId${task.id}'>
+                                    <input type = 'checkbox' class="checktask">
+                                    <h2 class="/h2">${task.text}</h3>
+                                    <p class="timeData">${task.time}</p>
+                                    <button class="del">
+                                        <img src="./pictures/trash.png" alt="">
+                                    </button>
+                                    <button class="edit">
+                                        <img src="./pictures/pencil.png" alt="">
+                                    </button>
+                                </div>`
+
+        document.querySelector('.taskList').innerHTML += newTaskContainer;
+    })
+}
 
 updateTaskList();
