@@ -1,10 +1,14 @@
 let storageTask = localStorage.getItem('storageTask');
-if (!storageTask)  {
+if (!storageTask) {
     storageTask = {}; 
 } else {
-    storageTask = JSON.parse(storageTask);  
+    try {
+        storageTask = JSON.parse(storageTask);  
+    } catch (error) {
+        console.error('Ошибка парсинга JSON:', error);
+        storageTask = {};
+    }
 }
-
 function createTask(){
     let newTaskText = document.querySelector('.newTaskText')
     console.log(newTaskText)
