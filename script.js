@@ -28,7 +28,7 @@ function createTask(){
         text: newTaskText.value,
     };
 
-    document.querySelector('modalBackground').style.display = 'none'
+    document.querySelector('.modalBackground').style.display = 'none'
     document.querySelector('.modal').style.display = 'none'
 
     localStorage.setItem('storageTask',storageTask)
@@ -62,7 +62,7 @@ function deleteTask(taskId){
     updateTaskList();
 }
 
-function editTask(taskId){
+function editTask(taskId, newText){
     let task = storageTask[taskId];
     task.text = newText;
     localStorage.setItem('storageTask',JSON.stringify(storageTask))
@@ -83,10 +83,10 @@ function updateTaskList(){
                                     <input type = 'checkbox' class="checktask">
                                     <h2 class="/h2">${task.text}</h3>
                                     <p class="timeData">${task.time}</p>
-                                    <button class="del"> onclik="editTask(${task.id}"   
+                                    <button class="del" onclik="deleteTask(${task.id}">   
                                         <img src="./pictures/trash.png" alt="">
                                     </button>
-                                    <button class="edit"> onclik="editTask(${task.id},promt('Введите новый текст:','${task.text}'))"
+                                    <button class="edit" onclik="editTask(${task.id},promt('Введите новый текст:','${task.text}'))">    
                                         <img src="./pictures/pencil.png" alt="">
                                     </button>
                                 </div>`
