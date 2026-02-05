@@ -83,10 +83,10 @@ function updateTaskList(){
                                     <input type = 'checkbox' class="checktask">
                                     <h2 class="/h2">${task.text}</h3>
                                     <p class="timeData">${task.time}</p>
-                                    <button class="del" onclik="deleteTask(${task.id}">   
+                                    <button class="del" onclick="deleteTask(${task.id}">   
                                         <img src="./pictures/trash.png" alt="">
                                     </button>
-                                    <button class="edit" onclik="editTask(${task.id},promt('Введите новый текст:','${task.text}'))">    
+                                    <button class="edit" onclick="editTask(${task.id},promt('Введите новый текст:','${task.text}'))">    
                                         <img src="./pictures/pencil.png" alt="">
                                     </button>
                                 </div>`
