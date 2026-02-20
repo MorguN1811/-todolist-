@@ -81,9 +81,9 @@ function updateTaskList(){
     
         let newTaskContainer = `<div  class="taskСontent ${task.state}" id='taskId${task.id}'>
                                     <input type = 'checkbox' class="checktask">
-                                    <h2 class="/h2">${task.text}</h3>
+                                    <h2 class="/h2">${task.text}</h2>
                                     <p class="timeData">${task.time}</p>
-                                    <button class="del" onclick="deleteTask(${task.id}">   
+                                    <button class="del" onclick="deleteTask(${task.id})">   
                                         <img src="./pictures/trash.png" alt="">
                                     </button>
                                     <button class="edit" onclick="editTask(${task.id},promt('Введите новый текст:','${task.text}'))">    
