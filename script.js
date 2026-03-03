@@ -86,7 +86,7 @@ function updateTaskList(){
                                     <button class="del" onclick="deleteTask(${task.id})">   
                                         <img src="./pictures/trash.png" alt="">
                                     </button>
-                                    <button class="edit" onclick="editTask(${task.id},promt('Введите новый текст:','${task.text}'))">    
+                                    <button class="edit" onclick="editTask(${task.id},prompt('Введите новый текст:','${task.text}'))">    
                                         <img src="./pictures/pencil.png" alt="">
                                     </button>
                                 </div>`
