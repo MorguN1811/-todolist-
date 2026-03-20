@@ -95,5 +95,16 @@ function updateTaskList(){
     })
 }
 
+const list = document.querySelector('.list')
+    items = document.querySelectorAll('.blockItems')
+
+function filter() {
+    list.addEventListener('click', event =>{
+        const targetId = event.target.dataset.id
+        console.log(targetId)
+    })
+}
+filter()
+
 
 updateTaskList();
