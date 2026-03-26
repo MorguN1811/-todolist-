@@ -9,6 +9,11 @@ if (!storageTask) {
         storageTask = {};
     }
 }
+
+function saveTasks(){
+    localStorage.setItem('storageTask' , JSON.stringify(storageTask))
+}
+
 function createTask(){
     let newTaskText = document.querySelector('.newTaskText')
     console.log(newTaskText)
@@ -31,7 +36,7 @@ function createTask(){
     document.querySelector('.modalBackground').style.display = 'none'
     document.querySelector('.modal').style.display = 'none'
 
-    localStorage.setItem('storageTask',storageTask)
+    localStorage.setItem('storageTask', JSON.stringify(storageTask))
     newTaskText.value = '';
     updateTaskList();
 }
@@ -80,8 +85,8 @@ function updateTaskList(){
     tasks.forEach(task => {
     
         let newTaskContainer = `<div  class="taskСontent ${task.state}" id='taskId${task.id}'>
-                                    <input type = 'checkbox' class="checktask">
-                                    <h2 class="/h2">${task.text}</h2>
+                                    <input type = 'checkbox' class="checktask" ${task.state === 'completed' ? 'checked' : ''}>
+                                    <h2>${task.text}</h2>
                                     <p class="timeData">${task.time}</p>
                                     <button class="del" onclick="deleteTask(${task.id})">   
                                         <img src="./pictures/trash.png" alt="">
@@ -95,16 +100,24 @@ function updateTaskList(){
     })
 }
 
-const list = document.querySelector('.list')
-    items = document.querySelectorAll('.blockItems')
-
-function filter() {
-    list.addEventListener('click', event =>{
-        const targetId = event.target.dataset.id
-        console.log(targetId)
-    })
-}
-filter()
-
+const selectElement = document.querySelector('#select');
+selectElement.addEventListener('change', (event) => {
+    const filterValue = event.target.value;
+    const taskElements = document.querySelectorAll('.taskСontent');
+    
+    taskElements.forEach(element => {
+        const taskState = element.classList.contains('completed') ? 'completed' : 'doing';
+        
+        if (filterValue === 'all') {
+            element.style.display = 'flex';
+        } else if (filterValue === 'completed' && taskState === 'completed') {
+            element.style.display = 'flex';
+        } else if (filterValue === 'not-fulfilled' && taskState === 'doing') {
+            element.style.display = 'flex';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+});
 
 updateTaskList();
