@@ -61,6 +61,20 @@ header{
     float: left;
 }
 
+.navBar{
+    position: fixed; 
+    top: 0%;        
+    left: 54%;       
+    transform: translate(-50%, -50%);
+}
+
+.addTaskBtn{
+    position: fixed; 
+    top: 60%;        
+    left: -4%;       
+    transform: translate(-50%, -50%);
+}
+
 .taskСontent .checktask{
     height: 30px;
     width: 30px;
@@ -76,8 +90,7 @@ header{
 }
 
 del{
-    
-}
+    }
 
 .del img{
     width: 20px;
