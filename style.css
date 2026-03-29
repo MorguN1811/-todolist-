@@ -124,6 +124,11 @@ select{
 }
 
 
+.scroll-block {
+  width: 300px; 
+  white-space: nowrap; 
+  overflow-x: auto; 
+}
 
 .modal {
     margin-left: 250px;
@@ -143,7 +148,10 @@ select{
     box-sizing: border-box;
     
     color: #000000; 
-    text-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    
+    .modal { display: none; }
+    .modal.is-open { display: block; }
 }
 
 
@@ -205,3 +213,32 @@ select{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+
+.taskList {
+
+    max-height: 60vh; 
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+
+.taskList::-webkit-scrollbar {
+    width: 8px;
+}
+
+.taskList::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 4px;
+}
+
+.taskList::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 4px;
+}
+
+.taskList::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
