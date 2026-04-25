@@ -1,34 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List</title>
+    <title>ToDoList</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <header>TODO LIST</header>
-    <nav class="navBar">
-        <button class="addTaskBtn">Add Task</button>
-        <select name="select" id="select" class="">
-            <option value="all">All</option>
-            <option value="completed">Completed</option>
-            <option value="not-fulfilled">In progress</option>
-        </select>
-    </nav>
-    <main class="main">
-        <section class="taskList">
-           
-        </section>
-    </main>
+    <div class="app">
+        <header class="appHeader">
+            <h1>ToDoList</h1>
+            <p>Планируйте дела и держите фокус на важном.</p>
+        </header>
+
+        <nav class="navBar">
+            <button class="addTaskBtn">Добавить задачу</button>
+            <div class="navActions">
+                <select name="select" id="select">
+                    <option value="all">Все</option>
+                    <option value="completed">Выполненные</option>
+                    <option value="not-fulfilled">В процессе</option>
+                    <option value="deleted">Удаленные</option>
+                </select>
+                <button class="clearDeletedBtn" type="button">Удалить все</button>
+            </div>
+        </nav>
+
+        <main class="main">
+            <section class="taskList"></section>
+        </main>
+    </div>
+
     <div class="modalBackground"></div>
-    <article class="modal">
-        <h1>NEW TASK</h1>
-        <input type="text" class="newTaskText" placeholder="Enter task">
-        <button class="addTaskButton" onclick="createTask()">Add</button>
+    <article class="modal addModal" role="dialog" aria-modal="true" aria-label="Новая задача">
+        <h2>Новая задача</h2>
+        <input type="text" class="newTaskText" placeholder="Введите задачу">
+        <button class="addTaskButton" onclick="createTask()">Добавить</button>
+        <p class="addTaskError" aria-live="polite"></p>
     </article>
 
-    <script src="script.js"> </script>
+    <article class="modal editModal" role="dialog" aria-modal="true" aria-label="Редактирование задачи">
+        <h2>Редактировать задачу</h2>
+        <input type="text" class="editTaskText" placeholder="Введите новый текст">
+        <div class="modalActions">
+            <button class="modalSecondaryButton cancelEditButton" type="button">Отмена</button>
+            <button class="modalPrimaryButton confirmEditButton" type="button">Сохранить</button>
+        </div>
+    </article>
+
+    <article class="modal deleteModal" role="dialog" aria-modal="true" aria-label="Подтверждение удаления">
+        <h2>Удалить задачу</h2>
+        <p class="deleteModalText">Эту задачу можно будет восстановить в фильтре "Удаленные".</p>
+        <div class="modalActions">
+            <button class="modalSecondaryButton cancelDeleteButton" type="button">Отмена</button>
+            <button class="modalDangerButton confirmDeleteButton" type="button">Удалить</button>
+        </div>
+    </article>
+
+    <article class="modal purgeModal" role="dialog" aria-modal="true" aria-label="Удаление из архива">
+        <h2>Удалить из архива</h2>
+        <p class="purgeModalText">После удаления из архива задача исчезнет без возможности восстановления.</p>
+        <div class="modalActions">
+            <button class="modalSecondaryButton cancelPurgeButton" type="button">Отмена</button>
+            <button class="modalDangerButton confirmPurgeButton" type="button">Убрать</button>
+        </div>
+    </article>
+
+    <script src="script.js"></script>
 </body>
 </html>
